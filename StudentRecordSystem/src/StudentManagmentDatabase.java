@@ -1,70 +1,75 @@
 import java.util.HashMap;
 /*
- * This class will store all the student records using a hierarchical system based on grades as the first 
- * comparison then the number of credits and so forth
- * 
- * It will implement a hashmap in which the students data will be stored in  
+ * This class will store all of the students into a database where a list of them can be formed and details about them can be accessed using a key that will efficiently find them
  */
 public class StudentManagmentDatabase {
 
-static int counter;
-int key;	
-HashMap<Integer, Student> StudentRecord = new HashMap<Integer, Student>();
+// Initialize the variables for the class
+static int counter; // This will keep track of the total number of students in the database
+int key;	// This will be used for each student to locate them within the database
+HashMap<Integer, Student> StudentRecord = new HashMap<Integer, Student>();  // This will be created in each database to efficiently store the students using a hash code to avoid running through every student in the database
 
-int hashCode(int personid) {
-	
-	return personid % 11;
+// Accessor Method that will return the hash code for the student based on the students PersonId
+int hashCode(int personid) {	
+return personid % 11; 		// This is the equation that will be used for the hash code
 }
 	
+// Constructor Method that will create a new database to store students
 StudentManagmentDatabase() {
-StudentRecord = new HashMap<Integer, Student>();
+StudentRecord = new HashMap<Integer, Student>(); // The hash map will store students in a certain integer key based on the hash code
 }
 
+// Mutator Method that will add the student into the database
 void addStudent(Student s) {
-int num = hashCode(s.getPersonid());
-StudentRecord.put(num, s);
-counter ++;
+int num = hashCode(s.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
+StudentRecord.put(num, s); // Puts the student into the hash Map based on the hash code
+counter ++; // Total Number of students in the database increases
 }
 
+//Mutator Method that will add the domestic student into the database
 void addDomesticStudent(DomesticStudent dms) {
-int num = hashCode(dms.getPersonid());
-StudentRecord.put(num, dms);
-counter ++;
+int num = hashCode(dms.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
+StudentRecord.put(num, dms); // Puts the student into the hash Map based on the hash code
+counter ++; // Total Number of students in the database increases
 }
 
+//Mutator Method that will add the international student into the database
 void addInternationalStudent(InternationalStudent ins) {
-int num = hashCode(ins.getPersonid());
-StudentRecord.put(num, ins);
-counter ++;
+int num = hashCode(ins.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
+StudentRecord.put(num, ins); // Puts the student into the hash Map based on the hash code
+counter ++; // Total Number of students in the database increases
 }
 
+// Accessor Method that will return the students name based on their PersonId
 String findStudentFromKey(int personid) {
-int i = hashCode(personid);
-return StudentRecord.get(i).getName();
-
+int i = hashCode(personid);  // Create a variable that will store the hash code of the student so it can be looked up in the hash map
+return StudentRecord.get(i).getName(); // Find the student object in the hash map based on the hash code and return it's name
 }
 
+// Mutator Method that removes a student from the database
 void removeStudent(Student s) {
-StudentRecord.remove(s, hashCode(s.getPersonid()));	
-counter --;
+StudentRecord.remove(s, hashCode(s.getPersonid()));	 // Uses one of the built in methods of Hash map to remove the student from their specific hash code
+counter --; // One less student in the total students in the database
 }
 
+//Mutator Method that removes a Domestic student from the database
 void removeDomesticStudent(DomesticStudent dms) {
-StudentRecord.remove(dms, hashCode(dms.getPersonid()));		
-counter --;
+StudentRecord.remove(dms, hashCode(dms.getPersonid()));	// Uses one of the built in methods of Hash map to remove the student from their specific hash code
+counter --; // One less student in the total students in the database
 }
 
+//Mutator Method that removes a International student from the database
 void removeInternationalStudent(InternationalStudent ins) {
-StudentRecord.remove(ins, hashCode(ins.getPersonid()));	
-counter --;
+StudentRecord.remove(ins, hashCode(ins.getPersonid()));	// Uses one of the built in methods of Hash map to remove the student from their specific hash code
+counter --; // One less student in the total students in the database
 }
 
+// Accessor Method that returns a list of all the students in the database
 String getListOfStudents() {
-String list = ""; 
-for(int i = 1; i < counter + 1; i ++) {
-list += i + ". " + findStudentFromKey(i) + "\n";
+String list = ""; // Create a variable that will store the list
+for(int i = 1; i < counter + 1; i ++) { // Run through all the students in the database 
+list += i + ". " + findStudentFromKey(i) + "\n"; // Add the student corresponding to their PersonId to the String Variable
 }	
-return list;
+return list; // Return the variable which has the list of all the students in the database
 }
-
 }
