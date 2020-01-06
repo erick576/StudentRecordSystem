@@ -1,6 +1,7 @@
 import java.util.HashMap;
 /*
  * This class will store all of the students into a database where a list of them can be formed and details about them can be accessed using a key that will efficiently find them
+ * Students references should not be exposed in the Database
  */
 public class StudentManagmentDatabase {
 
@@ -11,7 +12,7 @@ HashMap<Integer, Student> StudentRecord = new HashMap<Integer, Student>();  // T
 
 // Accessor Method that will return the hash code for the student based on the students PersonId
 int hashCode(int personid) {	
-return personid % 11; 		// This is the equation that will be used for the hash code
+return personid % 11; 		// This is the equation that will be used for the hash code (Ideally the most optimal hashCode should be used to implement this)
 }
 	
 // Constructor Method that will create a new database to store students
@@ -22,21 +23,21 @@ StudentRecord = new HashMap<Integer, Student>(); // The hash map will store stud
 // Mutator Method that will add the student into the database
 void addStudent(Student s) {
 int num = hashCode(s.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
-StudentRecord.put(num, s); // Puts the student into the hash Map based on the hash code
+StudentRecord.put(num, new Student(s)); // Puts the student into the hash Map based on the hash code
 counter ++; // Total Number of students in the database increases
 }
 
 //Mutator Method that will add the domestic student into the database
 void addDomesticStudent(DomesticStudent dms) {
 int num = hashCode(dms.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
-StudentRecord.put(num, dms); // Puts the student into the hash Map based on the hash code
+StudentRecord.put(num, new DomesticStudent(dms)); // Puts the student into the hash Map based on the hash code
 counter ++; // Total Number of students in the database increases
 }
 
 //Mutator Method that will add the international student into the database
 void addInternationalStudent(InternationalStudent ins) {
 int num = hashCode(ins.getPersonid()); // Creates a variable that will store the students hash code so it can be put in the specific number key in the hash map
-StudentRecord.put(num, ins); // Puts the student into the hash Map based on the hash code
+StudentRecord.put(num, new InternationalStudent(ins)); // Puts the student into the hash Map based on the hash code
 counter ++; // Total Number of students in the database increases
 }
 
