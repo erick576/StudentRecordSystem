@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Table extends Application {
 
 	private AnchorPane mainLayout;
 	public static Stage primaryStage;
@@ -16,19 +16,17 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Main.primaryStage = primaryStage;
-		VennDiagramWindowView();
+		Table.primaryStage = primaryStage;
+		TableView();
 		Scene scene = new Scene(this.mainLayout);
-		Main.primaryStage.setScene(scene);
-		Main.primaryStage.show();
-		Main.primaryStage.setResizable(false);
-		primaryStage.sizeToScene();
+		Table.primaryStage.setScene(scene);
+		Table.primaryStage.show();
 	}
 
-	private void VennDiagramWindowView() throws IOException {
+	private void TableView() throws IOException {
 
 		this.loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/View/StudentDatabaseApplicationView.fxml"));
+		loader.setLocation(getClass().getResource("/View/TableView.fxml"));
 		this.mainLayout = (AnchorPane) loader.load();
 	}
 
