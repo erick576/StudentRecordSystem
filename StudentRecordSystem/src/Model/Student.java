@@ -11,8 +11,22 @@ public class Student {
 	int noc; // The number of courses for the student
 	int CourseGrade; // The Students Grade in the Course
 	public static int id; // The sum of all students constructed
-	int personid; // The unique id given to each student
-
+	public int personid; // The unique id given to each student
+	public String type;
+	public double gpa;
+	public int credits;
+	public int tuition;
+	
+// Dummy Constructor for Student
+	public Student(int id, String name, String type, double gpa, int credits, int tuition) {
+		this.personid = id;
+		this.name = name;
+		this.type = type;
+		this.gpa = gpa;
+		this.credits = credits;
+		this.tuition = tuition;
+	}
+	
 // Constructor for Student
 	public Student(String name) {
 		this.name = name;
@@ -65,7 +79,7 @@ public class Student {
 
 // Mutator Method to add a course for a student
 	public void addCourse(Course c) throws CourseCapacityReached {
-		if (noc == 12) {
+		if (noc == 6) {
 			throw new CourseCapacityReached("Maximum Allowed Courses has already been reached");
 		} else {
 			Course cc = new Course(c.getCourseName(), c.getFee(), c.getAoc(), c.getProf());
@@ -88,7 +102,9 @@ public class Student {
 		double gpa = 0.0;
 		int cwg = 0;
 		for (int i = 0; i < noc; i++) {
-			if (courses[i].CourseGrade != -1) {
+			System.out.println("yes\n " + courses[i].getCourseGrade());
+			if (courses[i].getCourseGrade() != -1) {
+				System.out.println("yes");
 				gpa += courses[i].CourseGrade;
 				cwg++;
 			}
@@ -163,4 +179,17 @@ public class Student {
 			return "";
 		}
 	}
+	
+	
+	//Get Type
+	public String getType() {
+		return this.type;
+	}
+
+	// Set Type
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
 }

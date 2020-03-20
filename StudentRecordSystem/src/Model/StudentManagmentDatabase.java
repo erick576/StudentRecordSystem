@@ -31,7 +31,7 @@ public class StudentManagmentDatabase {
 	}
 
 // Method that will add the domestic student into the database
-	void addDomesticStudent(DomesticStudent dms) {
+	public void addDomesticStudent(DomesticStudent dms) {
 		int num = hashCode(dms.getPersonid());
 		StudentRecord.put(num, new DomesticStudent(dms));
 		counter++;

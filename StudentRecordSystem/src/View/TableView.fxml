@@ -4,21 +4,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane cache="true" cacheHint="SCALE" prefHeight="628.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane cache="true" cacheHint="SCALE" prefHeight="628.0" prefWidth="837.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller.TableController">
    <children>
-      <TableView fx:id="table" onSort="#table" prefHeight="787.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+      <TableView fx:id="table" layoutX="2.0" layoutY="2.0" prefHeight="628.0" prefWidth="837.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="2.0">
         <columns>
-          <TableColumn fx:id="nameCol" onEditStart="#nameCol" prefWidth="137.59997254610062" text="Name" />
-            <TableColumn fx:id="gpaCol" onEditStart="#gpaCol" prefWidth="79.20001220703125" text="GPA" />
-          <TableColumn fx:id="tuitionCol" minWidth="9.5999755859375" onEditStart="#tuitionCol" prefWidth="76.00001525878906" text="Tuition" />
-            <TableColumn fx:id="creditsCol" minWidth="8.79998779296875" onEditStart="#creditsCol" prefWidth="84.0" text="Credits" />
-            <TableColumn fx:id="idCol" minWidth="0.0" onEditStart="#idCol" prefWidth="73.60003662109375" text="ID" />
-            <TableColumn fx:id="course1Col" minWidth="2.39996337890625" onEditStart="#course1Col" prefWidth="90.4000244140625" text="Course 1" />
-            <TableColumn fx:id="course2Col" onEditStart="#course2Col" prefWidth="99.20001220703125" text="Course 2" />
-            <TableColumn fx:id="course3Col" minWidth="5.5999755859375" onEditStart="#course3Col" prefWidth="100.00006103515625" text="Course 3" />
-            <TableColumn fx:id="course4Col" minWidth="2.39996337890625" onEditStart="#course4Col" prefWidth="98.39996337890625" text="Course 4" />
-            <TableColumn fx:id="course5Col" minWidth="0.0" onEditStart="#course5Col" prefWidth="114.4000244140625" text="Course 5" />
-            <TableColumn fx:id="course6Col" onEditStart="#course6Col" prefWidth="112.00004882812505" text="Course 6" />
+          <TableColumn fx:id="idColumn" prefWidth="100.00000309944153" text="ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="225.6000213623047" text="Name" />
+            <TableColumn fx:id="typeColumn" prefWidth="172.0" text="Type" />
+            <TableColumn fx:id="gpaColumn" prefWidth="91.99993896484375" text="GPA" />
+            <TableColumn fx:id="creditsColumn" prefWidth="96.79998779296875" text="Credits" />
+            <TableColumn fx:id="tuitionColumn" prefWidth="148.0" text="Tuition" />
         </columns>
       </TableView>
    </children>

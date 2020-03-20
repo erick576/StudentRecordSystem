@@ -14,14 +14,17 @@ public class Course {
 
 // Course Constructor #1
 	public Course(String CourseName, int fee, int aoc, String prof) {
-		this(CourseName, fee, aoc);
+		this.CourseName = CourseName;
+		this.fee = fee;
+		this.aoc = aoc;
 		this.prof = prof;
 		CourseGrade = -1;
 	}
 
 // Course Constructor #2
 	public Course(String CourseName, int fee, int aoc) {
-		this(CourseName, aoc);
+		this.CourseName = CourseName;
+		this.aoc = aoc;
 		this.fee = fee;
 		this.prof = "";
 		CourseGrade = -1;
@@ -87,6 +90,6 @@ public class Course {
 
 // Get the students course Grade
 	public int getCourseGrade() {
-		return CourseGrade;
+		return this.CourseGrade;
 	}
 }

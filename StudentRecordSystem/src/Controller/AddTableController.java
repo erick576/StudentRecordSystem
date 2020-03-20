@@ -623,32 +623,112 @@ public class AddTableController implements Initializable {
 	}
 
 	public void domStudent(ActionEvent event) {
-		typeMenu.setText("International Student");
+		typeMenu.setText("Domestic Student");
 	}
 
 	public void intStudent(ActionEvent event) {
-		typeMenu.setText("Domestic Student");
+		typeMenu.setText("International Student");
 	}
 
 	public void saveButton(ActionEvent event) {
 		try {
+
+			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
+			String gradeHolder = grade.getText().replaceAll("[^0-9]", "");
+			String costHolder = cost.getText().replaceAll("[^0-9]", "");
+			if (menu.getText().contentEquals("Course 1")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[0] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[0].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[0] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+			} else if (menu.getText().contentEquals("Course 2")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[1] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[1].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[1] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+
+			} else if (menu.getText().contentEquals("Course 3")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[2] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[2].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[2] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+
+			} else if (menu.getText().contentEquals("Course 4")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[3] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[3].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[3] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+
+			} else if (menu.getText().contentEquals("Course 5")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[4] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[4].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[4] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+
+			} else if (menu.getText().contentEquals("Course 6")) {
+				if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("") && !costHolder.equals("")
+						&& !gradeHolder.equals("")) {
+					courses[5] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+					courses[5].setCourseGrade(Integer.parseInt(gradeHolder));
+				} else if (!courseName.equals("") && !creditsHolder.equals("") && !prof.equals("")
+						&& !costHolder.equals("") && gradeHolder.equals("")) {
+					courses[5] = new Course(courseName.getText(), Integer.parseInt(costHolder),
+							Integer.parseInt(creditsHolder), prof.getText());
+				}
+
+			}
+
 			if (name.getText().contentEquals("") || typeMenu.getText().contentEquals("Type Of Student")) {
 				throw new Exception();
 			}
 			if (typeMenu.getText().equals("International Student")) {
 				Student s = new InternationalStudent(name.getText());
+				s.setType(new String("International"));
 				for (int i = 0; i < courses.length; i++) {
 					if (courses[i] != null) {
 						s.addCourse(courses[i]);
+						System.out.println("yes\n " + courses[i].getCourseGrade());
 					}
 				}
 				StudentDatabaseApplicationController.record.addStudent(s);
-			} else {
+			} else if(typeMenu.getText().equals("Domestic Student")) {
 				Student s = new DomesticStudent(name.getText());
+				s.setType(new String("Domestic"));
 				for (int i = 0; i < courses.length; i++) {
 					if (courses[i] != null) {
 						s.addCourse(courses[i]);
-					}
+						}
 				}
 				StudentDatabaseApplicationController.record.addStudent(s);
 			}
