@@ -55,10 +55,6 @@ Model | View | Controller
 * View: Implemented using JavaFX.
 * Controller: Mouse, Editing and Key Listeners
 
-
-## Documents
-* User Manual
-
 ## Steps To Run Application
 | *Steps* |
 
