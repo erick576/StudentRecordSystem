@@ -78,7 +78,6 @@ public class TableController implements Initializable {
 		studentSelected.setName(editedCell.getNewValue().toString());
 		StudentDatabaseApplicationController.record.getStudentRecord().get(studentSelected.getPersonid())
 				.setName(editedCell.getNewValue().toString());
-		System.out.println(editedCell.getNewValue().toString());
 	}
 
 	// Edit ID Column
