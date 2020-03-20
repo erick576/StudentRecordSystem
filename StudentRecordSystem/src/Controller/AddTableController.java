@@ -38,6 +38,7 @@ public class AddTableController implements Initializable {
 		courses = new Course[6];
 	}
 
+	// Students Course 1 Fields
 	public void Course1(ActionEvent event) {
 		try {
 			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
@@ -135,6 +136,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Students Course 2 Fields
 	public void Course2(ActionEvent event) {
 		try {
 
@@ -235,6 +237,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Students Course 3 Fields
 	public void Course3(ActionEvent event) {
 		try {
 			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
@@ -332,6 +335,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Students Course 4 Fields
 	public void Course4(ActionEvent event) {
 		try {
 			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
@@ -429,6 +433,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Students Course 5 Fields
 	public void Course5(ActionEvent event) {
 		try {
 			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
@@ -526,6 +531,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Students Course 6 Fields
 	public void Course6(ActionEvent event) {
 		try {
 			String creditsHolder = credits.getText().replaceAll("[^0-9]", "");
@@ -623,14 +629,17 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Student Type Change
 	public void domStudent(ActionEvent event) {
 		typeMenu.setText("Domestic Student");
 	}
 
+	// Student Type Change
 	public void intStudent(ActionEvent event) {
 		typeMenu.setText("International Student");
 	}
 
+	// Save Student Entry Into Database
 	public void saveButton(ActionEvent event) {
 		try {
 
@@ -768,6 +777,7 @@ public class AddTableController implements Initializable {
 		}
 	}
 
+	// Cancel Student Entry
 	public void cancelButton(ActionEvent event) {
 		((Node) event.getSource()).getScene().getWindow().hide();
 	}

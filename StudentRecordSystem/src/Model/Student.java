@@ -12,20 +12,6 @@ public class Student {
 	int CourseGrade; // The Students Grade in the Course
 	public static int id; // The sum of all students constructed
 	public int personid; // The unique id given to each student
-	public String type;
-	public double gpa;
-	public int credits;
-	public double tuition;
-
-// Dummy Constructor for Student
-	public Student(int id, String name, String type, double gpa, int credits, double tuition) {
-		this.personid = id;
-		this.name = name;
-		this.type = type;
-		this.gpa = gpa;
-		this.credits = credits;
-		this.tuition = tuition;
-	}
 
 // Constructor for Student
 	public Student(String name) {
@@ -124,7 +110,66 @@ public class Student {
 		return total;
 	}
 
-// Get Course 1
+	// Get Number Of Courses
+	public int getNoc() {
+		return noc;
+	}
+
+	// Set Number Of Courses
+	public void setNoc(int noc) {
+		this.noc = noc;
+	}
+
+	/*
+	 * Extra Fields And Methods Used to Retrieve Data For Table
+	 */
+
+	public String type;
+	public double gpa;
+	public int credits;
+	public double tuition;
+
+	// Constructor for Student In TableView
+	public Student(int id, String name, String type, double gpa, int credits, double tuition) {
+		this.personid = id;
+		this.name = name;
+		this.type = type;
+		this.gpa = gpa;
+		this.credits = credits;
+		this.tuition = tuition;
+	}
+
+	// Get GPA field for Table
+	public double getGpa() {
+		return gpa;
+	}
+
+	// Get Credit Field for Table
+	public int getCredit() {
+		return this.credits;
+	}
+
+	// Get Tuition Field for Table
+	public double getTuitions() {
+		return this.tuition;
+	}
+
+	// Get Type
+	public String getType() {
+		return this.type;
+	}
+
+	// Set Type
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	// Return array of Courses
+	public Course[] getCourses() {
+		return this.courses;
+	}
+
+	// Get Course 1
 	public String getCourse1() {
 		if (courses[0] != null) {
 			return courses[0].getCourseName();
@@ -178,43 +223,4 @@ public class Student {
 		}
 	}
 
-	// Get Type
-	public String getType() {
-		return this.type;
-	}
-
-	// Set Type
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	// Return array of Courses
-	public Course[] getCourses() {
-		return this.courses;
-	}
-
-	// Get Number Of Courses
-	public int getNoc() {
-		return noc;
-	}
-
-	// Set Number Of Courses
-	public void setNoc(int noc) {
-		this.noc = noc;
-	}
-
-	// Get GPA field for Table
-	public double getGpa() {
-		return gpa;
-	}
-
-	// Get Credit Field for Table
-	public int getCredit() {
-		return this.credits;
-	}
-
-	// Get Tuition Field for Table
-	public double getTuitions() {
-		return this.tuition;
-	}
 }

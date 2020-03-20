@@ -58,6 +58,7 @@ public class TableController implements Initializable {
 
 	}
 
+	// Add Student Entires Into Table View
 	private ObservableList<Student> getPeople() {
 		ObservableList<Student> student = FXCollections.observableArrayList();
 		for (int i = 1; i <= StudentManagmentDatabase.counter; i++) {
@@ -71,6 +72,7 @@ public class TableController implements Initializable {
 		return student;
 	}
 
+	// Edit Name Column
 	public void changeNameColumnCellEvent(CellEditEvent<Student, String> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		studentSelected.setName(editedCell.getNewValue().toString());
@@ -79,6 +81,7 @@ public class TableController implements Initializable {
 		System.out.println(editedCell.getNewValue().toString());
 	}
 
+	// Edit ID Column
 	public void changeTypeColumnCellEvent(CellEditEvent<Student, String> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		if (editedCell.getNewValue().toString().contentEquals("International")
@@ -89,6 +92,7 @@ public class TableController implements Initializable {
 		}
 	}
 
+	// Edit GPA Column
 	public void changeGpaColumnCellEvent(CellEditEvent<Student, Double> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		String s = editedCell.getNewValue().toString().replaceAll("[^0-9]", "");
@@ -97,6 +101,7 @@ public class TableController implements Initializable {
 				.parseDouble(s));
 	}
 
+	// Edit Credits Column
 	public void changeCreditsColumnCellEvent(CellEditEvent<Student, Integer> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		studentSelected.credits = Integer.parseInt(editedCell.getNewValue().toString());
@@ -104,6 +109,7 @@ public class TableController implements Initializable {
 				.get(studentSelected.getPersonid()).credits = Integer.parseInt(editedCell.getNewValue().toString());
 	}
 
+	// Edit Tuition Column
 	public void changeTuitionColumnCellEvent(CellEditEvent<Student, Double> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		studentSelected.tuition = Double.parseDouble(editedCell.getNewValue().toString());

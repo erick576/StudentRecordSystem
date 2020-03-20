@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane cache="true" cacheHint="SCALE" prefHeight="480.0" prefWidth="488.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddTableController">
+<AnchorPane cache="true" cacheHint="SCALE" prefHeight="480.0" prefWidth="488.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller.AddTableController">
    <children>
       <Text layoutX="40.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill in Student Information (Press Ok When Complete)" wrappingWidth="380.53668212890625">
          <font>
@@ -52,10 +52,10 @@
          </font>
       </Text>
       <TextField fx:id="courseName" layoutX="105.0" layoutY="184.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Course Name" />
-      <TextField fx:id="credits" layoutX="105.0" layoutY="221.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Number Of Credits" />
+      <TextField fx:id="credits" layoutX="105.0" layoutY="221.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Number Of Credits (Integer ONLY)" />
       <TextField fx:id="prof" layoutX="105.0" layoutY="258.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Professor Name" />
-      <TextField fx:id="cost" layoutX="104.0" layoutY="295.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Cost" />
-      <TextField fx:id="grade" layoutX="103.0" layoutY="331.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Course Grade (9.0 Scale)" />
+      <TextField fx:id="cost" layoutX="104.0" layoutY="295.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Cost (Integer ONLY)" />
+      <TextField fx:id="grade" layoutX="103.0" layoutY="331.0" prefHeight="5.0" prefWidth="250.0" promptText="Insert Course Grade (Integer ONLY)" />
       <MenuButton fx:id="menu" layoutX="36.0" layoutY="141.0" mnemonicParsing="false" text="Select Course">
         <items>
           <MenuItem fx:id="Course1" mnemonicParsing="false" onAction="#Course1" text="Course 1" />
@@ -82,5 +82,10 @@
           <MenuItem fx:id="domStudent" mnemonicParsing="false" onAction="#domStudent" text="Domestic Student" />
         </items>
       </MenuButton>
+      <Text layoutX="175.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Course Number Before Entering Data!" wrappingWidth="262.39999999999986">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

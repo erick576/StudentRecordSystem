@@ -57,13 +57,13 @@ public class StudentManagmentDatabase {
 	}
 
 // Method that removes a Domestic student from the database
-	void removeDomesticStudent(DomesticStudent dms) {
+	public void removeDomesticStudent(DomesticStudent dms) {
 		StudentRecord.remove(dms, hashCode(dms.getPersonid()));
 		counter--;
 	}
 
 // Method that removes a International student from the database
-	void removeInternationalStudent(InternationalStudent ins) {
+	public void removeInternationalStudent(InternationalStudent ins) {
 		StudentRecord.remove(ins, hashCode(ins.getPersonid()));
 		counter--;
 	}

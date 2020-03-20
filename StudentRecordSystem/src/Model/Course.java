@@ -9,9 +9,8 @@ public class Course {
 	int fee; // The fee for the course
 	int aoc; // The amount of credits the course is worth
 	String prof; // The name of the professor
-	int CourseGrade; // The Defaulted Course Grade for whenever a student adds the course without a
-						// grade
-
+	int CourseGrade; // The Defaulted Course Grade for whenever a student adds the course without a grade
+					
 // Course Constructor #1
 	public Course(String CourseName, int fee, int aoc, String prof) {
 		this.CourseName = CourseName;

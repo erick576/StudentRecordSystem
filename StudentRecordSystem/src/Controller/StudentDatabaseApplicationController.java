@@ -54,6 +54,7 @@ public class StudentDatabaseApplicationController implements Initializable {
 		record = new StudentManagmentDatabase();
 	}
 
+	// Add Student Button Function
 	public void addStudentButton(ActionEvent event) {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/AddTableView.fxml"));
@@ -68,6 +69,7 @@ public class StudentDatabaseApplicationController implements Initializable {
 		}
 	}
 
+	// Export Student Data Function
 	public void exportButton(ActionEvent event) throws InvalidFileException, FileNotFoundException {
 		try {
 			JFileChooser fileChooser = new JFileChooser();
@@ -161,6 +163,7 @@ public class StudentDatabaseApplicationController implements Initializable {
 		}
 	}
 
+	// View Student Data Function
 	public void viewStudentsButton(ActionEvent event) {
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/TableView.fxml"));
