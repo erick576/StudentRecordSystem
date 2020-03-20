@@ -32,11 +32,11 @@ public class StudentDatabaseTest {
 			Angella = new DomesticStudent("Angella");
 			Jin = new InternationalStudent("Jin");
 
-		    EECS2030 = new Course("EECS2030", 1150.0, 3, "Burton Ma");
-		    EECS2021 = new Course("EECS2021", 1450.0, 4, "Amir Ranmhi");
-		    MATH2015 = new Course("MATH2015", 1150.0, 3, "Valeri Machine");
-		    PHYS2020 = new Course("PHYS2020", 1150.0, 3, "Stanislaw Jerzak");
-		    EECS2200 = new Course("EECS2200", 1450.0, 4, "Amir Kosshen");
+		    EECS2030 = new Course("EECS2030", (int) 1150.0, 3, "Burton Ma");
+		    EECS2021 = new Course("EECS2021", (int) 1450.0, 4, "Amir Ranmhi");
+		    MATH2015 = new Course("MATH2015", (int) 1150.0, 3, "Valeri Machine");
+		    PHYS2020 = new Course("PHYS2020", (int) 1150.0, 3, "Stanislaw Jerzak");
+		    EECS2200 = new Course("EECS2200", (int) 1450.0, 4, "Amir Kosshen");
 			
 			Eric.addCourse(EECS2030);
 			Eric.addCourse(MATH2015);

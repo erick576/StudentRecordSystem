@@ -1,25 +1,26 @@
 package Model;
+
 /*
  * This will be the class where courses will be created
  */
 public class Course {
 
 	String CourseName; // The name for the course
-	double fee; // The fee for the course
+	int fee; // The fee for the course
 	int aoc; // The amount of credits the course is worth
 	String prof; // The name of the professor
-	double CourseGrade; // The Defaulted Course Grade for whenever a student adds the course without a grade
-
+	int CourseGrade; // The Defaulted Course Grade for whenever a student adds the course without a
+						// grade
 
 // Course Constructor #1
-	public Course(String CourseName, double fee, int aoc, String prof) {
+	public Course(String CourseName, int fee, int aoc, String prof) {
 		this(CourseName, fee, aoc);
 		this.prof = prof;
 		CourseGrade = -1;
 	}
 
 // Course Constructor #2
-	Course(String CourseName, double fee, int aoc) {
+	public Course(String CourseName, int fee, int aoc) {
 		this(CourseName, aoc);
 		this.fee = fee;
 		this.prof = "";
@@ -45,7 +46,7 @@ public class Course {
 	}
 
 // Method that gives back the fee of the course
-	public double getFee() {
+	public int getFee() {
 		return fee;
 	}
 
@@ -65,7 +66,7 @@ public class Course {
 	}
 
 // Method that changes the fee of the course
-	public void setFee(double fee) {
+	public void setFee(int fee) {
 		this.fee = fee;
 	}
 
@@ -79,4 +80,13 @@ public class Course {
 		this.prof = prof;
 	}
 
+// Set the students Course Grade
+	public void setCourseGrade(int grade) {
+		this.CourseGrade = grade;
+	}
+
+// Get the students course Grade
+	public int getCourseGrade() {
+		return CourseGrade;
+	}
 }

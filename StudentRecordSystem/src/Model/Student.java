@@ -9,14 +9,14 @@ public class Student {
 	String name; // Name of the student
 	Course[] courses; // Array that stores the courses that the student is taking
 	int noc; // The number of courses for the student
-	double CourseGrade; // The Students Grade in the Course
+	int CourseGrade; // The Students Grade in the Course
 	public static int id; // The sum of all students constructed
 	int personid; // The unique id given to each student
 
 // Constructor for Student
 	public Student(String name) {
 		this.name = name;
-		courses = new Course[12];
+		courses = new Course[6];
 		noc = 0;
 		id++;
 		personid = id;
@@ -55,7 +55,7 @@ public class Student {
 	}
 
 // Method to assign or change the grade of the student
-	public void setCourseGrade(Student s, double CourseGrade, String CourseName) {
+	public void setCourseGrade(Student s, int CourseGrade, String CourseName) {
 		for (int i = 0; i < s.noc; i++) {
 			if (CourseName.equals(courses[i].getCourseName())) {
 				courses[i].CourseGrade = CourseGrade;
@@ -100,5 +100,67 @@ public class Student {
 	public int getPersonid() {
 		return personid;
 	}
+	
+// Get total Number of credits
+	public int getCredits() {
+		int total = 0;
+		for (int i = 0; i < noc; i++) {
+				total += courses[i].getAoc();
+			}
+		return total;
+		}
 
+// Get Course 1
+	public String getCourse1() {
+		if (courses[0] != null) {
+			return courses[0].getCourseName();
+		} else {
+			return "";
+		}
+	}
+
+	// Get Course 2
+	public String getCourse2() {
+		if (courses[1] != null) {
+			return courses[1].getCourseName();
+		} else {
+			return "";
+		}
+	}
+
+	// Get Course 3
+	public String getCourse3() {
+		if (courses[2] != null) {
+			return courses[2].getCourseName();
+		} else {
+			return "";
+		}
+	}
+
+	// Get Course 4
+	public String getCourse4() {
+		if (courses[3] != null) {
+			return courses[3].getCourseName();
+		} else {
+			return "";
+		}
+	}
+
+	// Get Course 5
+	public String getCourse5() {
+		if (courses[4] != null) {
+			return courses[4].getCourseName();
+		} else {
+			return "";
+		}
+	}
+
+	// Get Course 6
+	public String getCourse6() {
+		if (courses[5] != null) {
+			return courses[5].getCourseName();
+		} else {
+			return "";
+		}
+	}
 }

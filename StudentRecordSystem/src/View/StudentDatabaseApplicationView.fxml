@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane cache="true" cacheHint="SCALE" prefHeight="421.0" prefWidth="853.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDatabaseApplicationController">
+<AnchorPane cache="true" cacheHint="SCALE" prefHeight="421.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDatabaseApplicationController">
    <children>
       <ImageView fx:id="image" fitHeight="441.0" fitWidth="894.0" pickOnBounds="true" preserveRatio="true">
          <effect>
@@ -17,22 +17,22 @@
          <image>
             <Image url="@../img/picture.png" />
          </image></ImageView>
-      <Text layoutX="285.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Database" wrappingWidth="304.536865234375">
+      <Text layoutX="285.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Database" wrappingWidth="304.536865234375">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="viewStudentsButton" layoutX="590.0" layoutY="263.0" mnemonicParsing="false" onAction="#viewStudentsButton" prefHeight="62.0" prefWidth="147.0" text="View Students">
+      <Button fx:id="exportButton" layoutX="590.0" layoutY="221.0" mnemonicParsing="false" onAction="#exportButton" prefHeight="62.0" prefWidth="147.0" text="Export">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="addStudentButton" layoutX="137.0" layoutY="262.0" mnemonicParsing="false" onAction="#addStudentButton" prefHeight="62.0" prefWidth="147.0" text="Add Student">
+      <Button fx:id="addStudentButton" layoutX="112.0" layoutY="221.0" mnemonicParsing="false" onAction="#addStudentButton" prefHeight="62.0" prefWidth="147.0" text="Add Student">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="exportButton" layoutX="364.0" layoutY="263.0" mnemonicParsing="false" onAction="#exportButton" prefHeight="62.0" prefWidth="147.0" text="Export">
+      <Button fx:id="viewStudentsButton" layoutX="350.0" layoutY="221.0" mnemonicParsing="false" onAction="#viewStudentsButton" prefHeight="62.0" prefWidth="147.0" text="View Students">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

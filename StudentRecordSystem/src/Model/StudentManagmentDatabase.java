@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class StudentManagmentDatabase {
 
 // Initialize the variables for the class
-	static int counter; // This will keep track of the total number of students in the database
+	public static int counter; // This will keep track of the total number of students in the database
 	int key; // This will be used for each student to locate them within the database
 	HashMap<Integer, Student> StudentRecord = new HashMap<Integer, Student>(); // Store Students Within A hashMap
 
@@ -75,5 +75,10 @@ public class StudentManagmentDatabase {
 			list += i + ". " + findStudentFromKey(i) + "\n";
 		}
 		return list;
+	}
+	
+// Returns the list of students
+	public HashMap<Integer, Student> getStudentRecord() {
+		return StudentRecord;
 	}
 }
