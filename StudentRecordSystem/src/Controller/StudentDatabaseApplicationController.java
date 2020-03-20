@@ -104,7 +104,6 @@ public class StudentDatabaseApplicationController implements Initializable {
 			titles.add("Course 6");
 			Sheet sheet = workbook.createSheet("Results");
 			Row headerRow = sheet.createRow(0);
-			System.out.println(StudentManagmentDatabase.counter);
 			for (int i = 0; i < 11; i++) {
 				Cell cell = headerRow.createCell(i);
 				cell.setCellValue(titles.get(i));

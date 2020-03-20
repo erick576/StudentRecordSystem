@@ -39,8 +39,12 @@ public class Course {
 	}
 
 //Copy Constructor
-	Course(Course other) {
-		this(other.CourseName, other.fee, other.aoc, other.prof);
+	public Course(Course other) {
+		this.CourseName = other.CourseName;
+		this.fee = other.fee;
+		this.aoc = other.aoc;
+		this.prof = other.prof;
+		this.CourseGrade = other.CourseGrade;
 	}
 
 //  Method that gives back the Course Name

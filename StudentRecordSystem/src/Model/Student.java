@@ -15,10 +15,10 @@ public class Student {
 	public String type;
 	public double gpa;
 	public int credits;
-	public int tuition;
-	
+	public double tuition;
+
 // Dummy Constructor for Student
-	public Student(int id, String name, String type, double gpa, int credits, int tuition) {
+	public Student(int id, String name, String type, double gpa, int credits, double tuition) {
 		this.personid = id;
 		this.name = name;
 		this.type = type;
@@ -26,7 +26,7 @@ public class Student {
 		this.credits = credits;
 		this.tuition = tuition;
 	}
-	
+
 // Constructor for Student
 	public Student(String name) {
 		this.name = name;
@@ -37,7 +37,7 @@ public class Student {
 	}
 
 // Copy Constructor
-	Student(Student other) {
+	public Student(Student other) {
 		this.name = other.name;
 		this.courses = new Course[other.courses.length];
 		for (int i = 0; i < other.noc; i++) {
@@ -102,9 +102,7 @@ public class Student {
 		double gpa = 0.0;
 		int cwg = 0;
 		for (int i = 0; i < noc; i++) {
-			System.out.println("yes\n " + courses[i].getCourseGrade());
-			if (courses[i].getCourseGrade() != -1) {
-				System.out.println("yes");
+			if (this.courses[i].getCourseGrade() != -1) {
 				gpa += courses[i].CourseGrade;
 				cwg++;
 			}
@@ -116,15 +114,15 @@ public class Student {
 	public int getPersonid() {
 		return personid;
 	}
-	
+
 // Get total Number of credits
 	public int getCredits() {
 		int total = 0;
 		for (int i = 0; i < noc; i++) {
-				total += courses[i].getAoc();
-			}
-		return total;
+			total += courses[i].getAoc();
 		}
+		return total;
+	}
 
 // Get Course 1
 	public String getCourse1() {
@@ -179,9 +177,8 @@ public class Student {
 			return "";
 		}
 	}
-	
-	
-	//Get Type
+
+	// Get Type
 	public String getType() {
 		return this.type;
 	}
@@ -190,6 +187,34 @@ public class Student {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
+
+	// Return array of Courses
+	public Course[] getCourses() {
+		return this.courses;
+	}
+
+	// Get Number Of Courses
+	public int getNoc() {
+		return noc;
+	}
+
+	// Set Number Of Courses
+	public void setNoc(int noc) {
+		this.noc = noc;
+	}
+
+	// Get GPA field for Table
+	public double getGpa() {
+		return gpa;
+	}
+
+	// Get Credit Field for Table
+	public int getCredit() {
+		return this.credits;
+	}
+
+	// Get Tuition Field for Table
+	public double getTuitions() {
+		return this.tuition;
+	}
 }

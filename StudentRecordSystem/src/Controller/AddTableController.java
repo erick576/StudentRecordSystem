@@ -9,6 +9,7 @@ import Model.Course;
 import Model.DomesticStudent;
 import Model.InternationalStudent;
 import Model.Student;
+import Model.StudentManagmentDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,7 +22,7 @@ import javafx.scene.control.TextField;
 
 public class AddTableController implements Initializable {
 
-	public static Course[] courses;
+	private static Course[] courses;
 
 	@FXML
 	public TextField name, courseName, grade, credits, prof, cost;
@@ -714,23 +715,48 @@ public class AddTableController implements Initializable {
 			}
 			if (typeMenu.getText().equals("International Student")) {
 				Student s = new InternationalStudent(name.getText());
-				s.setType(new String("International"));
+				StudentDatabaseApplicationController.record.addStudent(new Student(s));
+				StudentDatabaseApplicationController.record.getStudentRecord()
+						.get(StudentManagmentDatabase.counter % 11).setType("International");
 				for (int i = 0; i < courses.length; i++) {
 					if (courses[i] != null) {
-						s.addCourse(courses[i]);
-						System.out.println("yes\n " + courses[i].getCourseGrade());
+						StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).addCourse(courses[i]);
+						Course[] holder = StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getCourses();
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setAoc(courses[i].getAoc());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setFee(courses[i].getFee());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1]
+										.setCourseGrade(courses[i].getCourseGrade());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setProf(courses[i].getProf());
 					}
 				}
-				StudentDatabaseApplicationController.record.addStudent(s);
-			} else if(typeMenu.getText().equals("Domestic Student")) {
+			} else if (typeMenu.getText().equals("Domestic Student")) {
 				Student s = new DomesticStudent(name.getText());
-				s.setType(new String("Domestic"));
+				StudentDatabaseApplicationController.record.addStudent(new Student(s));
+				StudentDatabaseApplicationController.record.getStudentRecord()
+						.get(StudentManagmentDatabase.counter % 11).setType("Domestic");
 				for (int i = 0; i < courses.length; i++) {
 					if (courses[i] != null) {
-						s.addCourse(courses[i]);
-						}
+						StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).addCourse(courses[i]);
+						Course[] holder = StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getCourses();
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setAoc(courses[i].getAoc());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setFee(courses[i].getFee());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1]
+										.setCourseGrade(courses[i].getCourseGrade());
+						holder[StudentDatabaseApplicationController.record.getStudentRecord()
+								.get(StudentManagmentDatabase.counter % 11).getNoc() - 1].setProf(courses[i].getProf());
+					}
 				}
-				StudentDatabaseApplicationController.record.addStudent(s);
 			}
 			JOptionPane.showMessageDialog(null, "Student Added!");
 			((Node) event.getSource()).getScene().getWindow().hide();

@@ -4,16 +4,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane cache="true" cacheHint="SCALE" prefHeight="628.0" prefWidth="837.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller.TableController">
+<AnchorPane cache="true" cacheHint="SCALE" prefHeight="628.0" prefWidth="837.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TableController">
    <children>
       <TableView fx:id="table" layoutX="2.0" layoutY="2.0" prefHeight="628.0" prefWidth="837.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="2.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="100.00000309944153" text="ID" />
-            <TableColumn fx:id="nameColumn" prefWidth="225.6000213623047" text="Name" />
-            <TableColumn fx:id="typeColumn" prefWidth="172.0" text="Type" />
-            <TableColumn fx:id="gpaColumn" prefWidth="91.99993896484375" text="GPA" />
-            <TableColumn fx:id="creditsColumn" prefWidth="96.79998779296875" text="Credits" />
-            <TableColumn fx:id="tuitionColumn" prefWidth="148.0" text="Tuition" />
+            <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumnCellEvent" prefWidth="225.6000213623047" text="Name" />
+            <TableColumn fx:id="typeColumn" onEditCommit="#changeTypeColumnCellEvent" prefWidth="172.0" text="Type" />
+            <TableColumn fx:id="gpaColumn" onEditCommit="#changeGpaColumnCellEvent" prefWidth="91.99993896484375" text="GPA" />
+            <TableColumn fx:id="creditsColumn" onEditCommit="#changeCreditsColumnCellEvent" prefWidth="96.79998779296875" text="Credits" />
+            <TableColumn fx:id="tuitionColumn" onEditCommit="#changeTuitionColumnCellEvent" prefWidth="148.0" text="Tuition" />
         </columns>
       </TableView>
    </children>
