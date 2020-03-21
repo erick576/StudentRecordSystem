@@ -113,18 +113,40 @@ public class StudentDatabaseApplicationController implements Initializable {
 
 			for (int i = 1; i <= StudentManagmentDatabase.counter; i++) {
 				Row row = sheet.createRow(i);
+				double gpa;
+				if (record.getStudentRecord().get(i).getGPA() != record.getStudentRecord().get(i).getGpa()
+						&& record.getStudentRecord().get(i).getGpa() != 0) {
+					gpa = record.getStudentRecord().get(i).getGpa();
+				} else {
+					gpa = record.getStudentRecord().get(i).getGPA();
+				}
+
+				int credits;
+				if (record.getStudentRecord().get(i).getCredits() != record.getStudentRecord().get(i).getCredit()
+						&& record.getStudentRecord().get(i).getCredit() != 0) {
+					credits = record.getStudentRecord().get(i).getCredit();
+				} else {
+					credits = record.getStudentRecord().get(i).getCredits();
+				}
+				double tuition;
+				if (record.getStudentRecord().get(i).getTuition() != record.getStudentRecord().get(i).getTuitions()
+						&& record.getStudentRecord().get(i).getTuitions() != 0) {
+					tuition = record.getStudentRecord().get(i).getTuitions();
+				} else {
+					tuition = record.getStudentRecord().get(i).getTuition();
+				}
 				for (int j = 0; j < 11; j++) {
 					if (j == 0) {
 						row.createCell(j).setCellValue(record.getStudentRecord().get(i).getName());
 					}
 					if (j == 1) {
-						row.createCell(j).setCellValue(Double.toString(record.getStudentRecord().get(i).getGPA()));
+						row.createCell(j).setCellValue(gpa);
 					}
 					if (j == 2) {
-						row.createCell(j).setCellValue(record.getStudentRecord().get(i).getTuition());
+						row.createCell(j).setCellValue(tuition);
 					}
 					if (j == 3) {
-						row.createCell(j).setCellValue(record.getStudentRecord().get(i).getCredits());
+						row.createCell(j).setCellValue(credits);
 					}
 					if (j == 4) {
 						row.createCell(j).setCellValue(record.getStudentRecord().get(i).getPersonid());

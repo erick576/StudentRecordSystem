@@ -223,4 +223,19 @@ public class Student {
 		}
 	}
 
+	// Set GPA
+	public void setGpa(double gpa) {
+		this.gpa = gpa;
+	}
+
+	// Set Credits
+	public void setCredits(int credits) {
+		this.credits = credits;
+	}
+
+	// Set Tuition
+	public void setTuition(double tuition) {
+		this.tuition = tuition;
+	}
+
 }

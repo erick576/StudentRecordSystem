@@ -40,6 +40,9 @@ public class TableController implements Initializable {
 	@FXML
 	public TableColumn<Student, Double> tuitionColumn;
 
+	private static int credits;
+	private static double gpa, tuition;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("Name"));
@@ -58,16 +61,41 @@ public class TableController implements Initializable {
 
 	}
 
-	// Add Student Entires Into Table View
+	// Add Student Entries Into Table View
 	private ObservableList<Student> getPeople() {
 		ObservableList<Student> student = FXCollections.observableArrayList();
+
 		for (int i = 1; i <= StudentManagmentDatabase.counter; i++) {
+
+			if (StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11)
+					.getGPA() != StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getGpa()
+					&& StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getGpa() != 0) {
+				gpa = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getGpa();
+			} else {
+				gpa = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getGPA();
+			}
+
+			if (StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11)
+					.getCredits() != StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11)
+							.getCredit()
+					&& StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getCredit() != 0) {
+				credits = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getCredit();
+			} else {
+				credits = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getCredits();
+			}
+			if (StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11)
+					.getTuition() != StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11)
+							.getTuitions()
+					&& StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getTuitions() != 0) {
+				tuition = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getTuitions();
+			} else {
+				tuition = StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getTuition();
+			}
+
 			student.add(new Student(StudentDatabaseApplicationController.record.getStudentRecord().get(i).getPersonid(),
 					StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getName(),
-					StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getType(),
-					StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getGPA(),
-					StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getCredits(),
-					(int) StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getTuition()));
+					StudentDatabaseApplicationController.record.getStudentRecord().get(i % 11).getType(), gpa, credits,
+					tuition));
 		}
 		return student;
 	}
@@ -94,25 +122,24 @@ public class TableController implements Initializable {
 	// Edit GPA Column
 	public void changeGpaColumnCellEvent(CellEditEvent<Student, Double> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
-		String s = editedCell.getNewValue().toString().replaceAll("[^0-9]", "");
-		studentSelected.gpa = (Double.parseDouble(s));
-		StudentDatabaseApplicationController.record.getStudentRecord().get(studentSelected.getPersonid()).gpa = (Double
-				.parseDouble(s));
+		studentSelected.gpa = Double.parseDouble(editedCell.getNewValue().toString());
+		StudentDatabaseApplicationController.record.getStudentRecord().get(studentSelected.getPersonid())
+				.setGpa(Double.parseDouble(editedCell.getNewValue().toString()));
 	}
 
 	// Edit Credits Column
 	public void changeCreditsColumnCellEvent(CellEditEvent<Student, Integer> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		studentSelected.credits = Integer.parseInt(editedCell.getNewValue().toString());
-		StudentDatabaseApplicationController.record.getStudentRecord()
-				.get(studentSelected.getPersonid()).credits = Integer.parseInt(editedCell.getNewValue().toString());
+		StudentDatabaseApplicationController.record.getStudentRecord().get(studentSelected.getPersonid())
+				.setCredits(Integer.parseInt(editedCell.getNewValue().toString()));
 	}
 
 	// Edit Tuition Column
 	public void changeTuitionColumnCellEvent(CellEditEvent<Student, Double> editedCell) {
 		Student studentSelected = table.getSelectionModel().getSelectedItem();
 		studentSelected.tuition = Double.parseDouble(editedCell.getNewValue().toString());
-		StudentDatabaseApplicationController.record.getStudentRecord()
-				.get(studentSelected.getPersonid()).tuition = Double.parseDouble(editedCell.getNewValue().toString());
+		StudentDatabaseApplicationController.record.getStudentRecord().get(studentSelected.getPersonid())
+				.setTuition(Double.parseDouble(editedCell.getNewValue().toString()));
 	}
 }
