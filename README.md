@@ -42,7 +42,6 @@ A University Student Record System GUI Application that can hold students and ac
     |   ├── .project
     │   └──  build.fxbuild
     ├── .gitignore
-    ├── Application.jar
     ├── LICENSE
     └── README.md
 
