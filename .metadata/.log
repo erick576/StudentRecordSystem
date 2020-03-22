@@ -4349,3 +4349,10 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2020-03-21 18:43:29.522
+!MESSAGE An internal error occurred during: "Check server availability".
+!STACK 0
+java.lang.NullPointerException
+	at com.yattasolutions.platform.marketplace.client.account.CheckServerAvailabilityJob.run(CheckServerAvailabilityJob.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
