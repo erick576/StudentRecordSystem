@@ -7,6 +7,8 @@ A University Student Record System GUI Application that can hold students and ac
 
     |   ├── .github/ISSUE_TEMPLATE  
     |   ├── .metadata
+    |   ├── Documentation
+    |   |    └── User Manual.pdf
     |   ├── StudentRecordSystem
     |   |    ├── .settings
     |   |    └── org.eclipse.jdt.core.prefs
@@ -54,6 +56,9 @@ Model | View | Controller
 * Model: Student and Course Objects With All Necessary Parameters
 * View: Implemented using JavaFX.
 * Controller: Mouse, Editing and Key Listeners
+
+## Documentation
+* [User Manual](https://github.com/erick576/StudentRecordSystem/tree/master/Documentation)
 
 ## Steps To Run Application
 | *Steps* |
