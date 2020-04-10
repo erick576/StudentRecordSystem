@@ -41,6 +41,7 @@ A University Student Record System GUI Application that can hold students and ac
     |   |    |    └── picture.png
     │   ├── .classpath
     │   ├── .gitignore
+    │   ├──  Dockerfile
     |   ├── .project
     │   └──  build.fxbuild
     ├── .gitignore
