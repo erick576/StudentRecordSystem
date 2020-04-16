@@ -1,52 +1,14 @@
 # StudentRecordSystem
-
 ## Description
 A University Student Record System GUI Application that can hold students and access their Courses, GPA, etc in Real Time
+## Main Page
+![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/Application.PNG)
 
-## Project Structure
+## View Students Page
+![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/ShowStudents.PNG)
 
-    |   ├── .github/ISSUE_TEMPLATE  
-    |   ├── .metadata
-    |   ├── Documentation
-    |   |    └── User Manual.pdf
-    |   ├── StudentRecordSystem
-    |   |    ├── .settings
-    |   |    └── org.eclipse.jdt.core.prefs
-    │   ├── src
-    |   |    ├── Application
-    |   |    |    ├── AddTable.java
-    |   |    |    ├── Main.java
-    |   |    |    ├── Table.java
-    |   |    |    └── application.css
-    |   |    ├── Controller
-    |   |    |    ├── AddTableController.java
-    |   |    |    ├── InvalidFileException.java
-    |   |    |    ├── StudentDatabaseApplicationController.java
-    |   |    |    └── TableController.java
-    |   |    ├── Model
-    |   |    |    ├── Course.java
-    |   |    |    ├── CourseCapacityReached.java
-    |   |    |    ├── DomesticStudent.java
-    |   |    |    ├── InternationalStudent.java
-    |   |    |    ├── Student.java
-    |   |    |    └── StudentManagmentDatabase.java
-    |   |    ├── Test
-    |   |    |    ├── AllTests.java
-    |   |    |    └── StudentDatabaseTest.java
-    |   |    ├── View
-    |   |    |    ├── AddTableView.fxml
-    |   |    |    ├── StudentDatabaseApplicationView.fxml
-    |   |    |    └── TableView.fxml
-    |   |    └── img
-    |   |    |    └── picture.png
-    │   ├── .classpath
-    │   ├── .gitignore
-    │   ├──  Dockerfile
-    |   ├── .project
-    │   └──  build.fxbuild
-    ├── .gitignore
-    ├── LICENSE
-    └── README.md
+## Add Students Page
+![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/AddStudent.PNG)
 
 ## Design Pattern
 
@@ -57,6 +19,12 @@ Model | View | Controller
 * Model: Student and Course Objects With All Necessary Parameters
 * View: Implemented using JavaFX.
 * Controller: Mouse, Editing and Key Listeners
+
+## Source Code
+- [StudentRecordSystem](https://github.com/erick576/StudentRecordSystem/tree/master/StudentRecordSystem/src)
+
+## Dockerfile
+- [Dockerfile](https://github.com/erick576/StudentRecordSystem/blob/master/Dockerfile)
 
 ## Documentation
 * [User Manual](https://github.com/erick576/StudentRecordSystem/tree/master/Documentation)
