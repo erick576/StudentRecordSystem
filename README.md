@@ -1,4 +1,8 @@
 # StudentRecordSystem
+![Repo Size](https://img.shields.io/github/repo-size/erick576/StudentRecordSystem?style=flat-square)
+![License](https://img.shields.io/github/license/erick576/StudentRecordSystem?style=flat-square)
+![Latest Release](https://img.shields.io/github/v/release/erick576/StudentRecordSystem?style=flat-square)
+
 ## Description
 A University Student Record System GUI Application that can hold students and access their Courses, GPA, etc in Real Time
 ## Main Page
