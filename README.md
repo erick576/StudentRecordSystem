@@ -32,7 +32,7 @@ Model | View | Controller
 ## Steps To Run Application
 | *Steps* |
 |----|
-|**1.** Go Onto Releases And Press [First Release](https://github.com/erick576/StudentRecordSystem/releases/tag/v1.0)|
+|**1.** Go Onto Releases And Press [Final Release](https://github.com/erick576/StudentRecordSystem/releases/tag/vF)|
 |**2.** Download The Application.jar File|
 |**3.** Open The File in Your Command Prompt|
 |**4.** Type ```java -jar Application.jar```|
