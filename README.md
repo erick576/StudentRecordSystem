@@ -17,9 +17,9 @@ Model–View–Controller
 Model | View | Controller
 --- | --- | ---
 
-* Model: Student and Course Objects With All Necessary Parameters
-* View: Implemented using JavaFX.
-* Controller: Mouse, Editing and Key Listeners
+* **Model**: Student and Course Objects With All Necessary Parameters
+* **View**: Implemented using JavaFX.
+* **Controller**: Mouse, Editing and Key Listeners
 
 ## Source Code
 - [StudentRecordSystem](https://github.com/erick576/StudentRecordSystem/tree/master/StudentRecordSystem/src)
