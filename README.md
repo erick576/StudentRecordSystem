@@ -3,7 +3,7 @@
 ## Description
 A University Student Record System GUI Application that can hold students and access their Courses, GPA, etc in Real Time
 ## Main Page
-![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/Application.PNG)
+![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/MainPage.PNG)
 
 ## View Students Page
 ![Image description](https://github.com/erick576/StudentRecordSystem/blob/master/Images/ShowStudents.PNG)
