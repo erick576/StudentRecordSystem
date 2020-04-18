@@ -19,6 +19,7 @@ public class Main extends Application {
 		Main.primaryStage = primaryStage;
 		VennDiagramWindowView();
 		Scene scene = new Scene(this.mainLayout);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Main.primaryStage.setScene(scene);
 		Main.primaryStage.show();
 		Main.primaryStage.setResizable(false);

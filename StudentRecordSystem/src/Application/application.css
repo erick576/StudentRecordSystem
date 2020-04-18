@@ -1,1 +1,12 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.button {
+	-fx-color: #1b3a4f;
+}
+
+.button:hover {
+  	-fx-color: #aebac2;
+}
+
+.button:active {
+  	-fx-color: #1b3a4f;
+}

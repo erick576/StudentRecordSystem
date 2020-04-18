@@ -17,7 +17,7 @@
          <image>
             <Image url="@../img/picture.png" />
          </image></ImageView>
-      <Text layoutX="285.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Database" wrappingWidth="304.536865234375">
+      <Text layoutX="225.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Record System" wrappingWidth="396.53680419921875">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
